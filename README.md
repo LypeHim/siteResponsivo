@@ -3,12 +3,12 @@
 
 <br>
 <strong>Considerações:</strong>
+<p>Existe um trecho no arquivo index e estilo que estão comentados (mesma coisa para o arquivo javascript), estas áreas dizem respeito ao código para adicionar um modal a um dos botões do site. Estou trabalhando nessa atualização.</p>
 <p>A(s) imagem(ns) foi (foram) retirada(s) do banco de imagens gratuito: https://www.pexels.com</p>
 
 <hr>
 <br>
 <strong>Outras informações:</strong>
-<p>Existe um trecho no arquivo index e estilo que estão comentados (mesma coisa para o arquivo javascript), estas áreas dizem respeito ao código para adicionar um modal a um dos botões do site. Estou trabalhando nessa atualização.</p>
 <p>O trecho a seguir pode aparecer repetido caso você visualize e leia as informações sobre mais de um repositório.</p>
 
 <br>
