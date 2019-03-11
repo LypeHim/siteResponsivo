@@ -14,7 +14,7 @@
 
 <br>
 </strong>Atualizações de código:</strong>
-<p>Pretendo adicionar (aos poucos), à estes códigos, as configurações que permitem a acessibilidade e a compatibilidade entre navegadores e versões de navegadores (crossbrowser). Isso será feito com mais calma tendo em vista que meu objetivo inicial é disponibilizar o básico dos sites (site pronto).</p>
+<p>Pretendo adicionar (aos poucos), à estes códigos, as configurações que permitam a acessibilidade. Isso será feito com mais calma tendo em vista que meu objetivo inicial é disponibilizar o básico dos sites (site pronto).</p>
 
 <br>
 <strong>Ambiente de visualização:</strong>
