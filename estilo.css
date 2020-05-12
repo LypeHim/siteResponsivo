@@ -1,40 +1,53 @@
 @charset "utf-8";
-/* Variáveis */
+/* Variáveis
+BEM CSS: 
+    .block{} //block or component
+    .blocl__element{} //sub-element of component
+    .block__element--modifier{} //state modifier of component
+
+*/
 :root{
 	--primary: #ddd;
 	--dark: #333;
 	--light: #fff;
-	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);}
+	--shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
 
 body{
 	background: #ccc;
 	margin: 30px 50px;
-	line-height: 1.4;}
+	line-height: 1.4;
+}
 
 .btn{
 	background: var(--dark);
 	color: var(--light);
 	padding: 0.6rem 1rem;
 	text-decoration: none;
-	border: 0;}
+	border: 0;
+}
 
 img{
-	max-width: 100%;}
+	max-width: 100%;
+}
 
-.envolucro{
+.wrapper{
 	display: grid;
-	grid-gap: 20px;}
+	grid-gap: 20px;
+}
+
 /*===============================================================================================
-								Área do cabeçalho
+								Navigation - ok
 ================================================================================================*/
-.main-nav ul{
+.main-nav .navigation{
 	display: grid;
 	grid-gap: 20px;
 	padding: 0;
 	list-style: none;
-	grid-template-columns: repeat(4,1fr);}
+	grid-template-columns: repeat(4,1fr);
+}
 
-.main-nav a{
+.main-nav .navigation__link{
 	background: var(--primary);
 	display: block;
 	text-decoration: none;
@@ -43,11 +56,14 @@ img{
 	color: var(--dark);
 	text-transform:uppercase;
 	font-size: 1.1rem;
-	box-shadow: var(--shadow);}
+	box-shadow: var(--shadow);
+}
 
-.main-nav a:hover{
+.main-nav .navigation__link:hover{
 	background: var(--dark);
-	color: var(--light);}
+	color: var(--light);
+}
+
 /*===============================================================================================
 								Área do conteúdo
 ================================================================================================*/
@@ -55,11 +71,12 @@ img{
 	display: grid;
 	grid-gap: 20px;
 	grid-template-areas: 
-		'destaque destaque top-box-a'
-		'destaque destaque top-box-b';}
+		'banner banner commom'
+		'banner banner vip';
+	}
 
-.destaque{
-	grid-area: destaque;
+.banner{
+	grid-area: banner;
 	min-height: 400px;
 	background:url(img/pic2.jpg);
 	background-size: cover;
@@ -69,99 +86,133 @@ img{
 	flex-direction:column;
 	align-items:flex-start;
 	justify-content: center;
-	box-shadow: var(--shadow);}
+	box-shadow: var(--shadow);
+}
 
-.destaque h1{
+.banner .banner__title{
 	font-size: 4rem;
 	margin-bottom: 0;
-	color: var(--light);}
+	color: var(--light);
+}
 
-.destaque p{
+.banner .banner__description{
 	font-size: 1.3rem;
 	margin-top: 0;
-	color: var(--light);}
+	color: var(--light);
+}
 
-.top-box{
+.services{
 	background: var(--primary);
 	display: grid;
 	align-items: center;
 	justify-content:center;
 	box-shadow: var(--shadow);
-	padding: 1.5rem;}
+	padding: 1.5rem;
+}
 
-.top-box .price{
-	font-size: 2.5rem;}
+.services .services__price{
+	font-size: 2.5rem;
+}
 
-.top-box-a{
-	grid-area: top-box-a;}
+.services .services__btn{
+	text-align: center;
+}
 
-.top-box-b{
-	grid-area: top-box-b;}
+.services .services__btn:hover{
+	color: var(--dark);
+	background: var(--light);	
+	/*Insted of change color, apply an effect like a glass reflection crossing the button*/
+}
 
-.boxes{
-	display: grid;
-	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));}
+.commom{
+	grid-area: commom;
+}
+
+.vip{
+	grid-area: vip;
+}
 
 .box{
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box__item{
 	background: var(--primary);
 	text-align: center;
 	padding: 1.5rem 2rem;
-	box-shadow: var(--shadow);}
+	box-shadow: var(--shadow);
+}
 
-.info{
+.middle-container{
 	background: var(--primary);
 	box-shadow: var(--shadow);
 	display: grid;
 	grid-gap: 30px;
 	grid-template-columns: repeat(2,1fr);
-	padding: 3rem;}
+	padding: 3rem;
+}
 
-.portfolio{
+.bottom-container{
 	display: grid;
 	grid-gap: 20px;
-	grid-template-columns: repeat(auto-fit, minmax(200px,1fr));}
+	grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
 
-.portfolio img{
+.bottom-container img{
 	width: 100%;
-	box-shadow: var(--shadow);}
+	box-shadow: var(--shadow);
+}
+
 /*===============================================================================================
-									Área do rodapé
+								Footer
 ================================================================================================*/
-footer{
+.footer{
 	margin-top: 2rem;
 	text-align: center;
 	padding: 1rem; 
 	background: var(--dark);
-	color: var(--light);}
+	color: var(--light);
+}
 
 /*===============================================================================================
-									Media Querys
+							Media Querys (mobile first - then larger)
 ================================================================================================*/
-@media(max-width:700px){
-	.top-container{
-		grid-template-areas: 
-			'destaque destaque'
-			'top-box-a top-box-b';}
-	.destaque h1{
-		font-size: 2.5rem;}
-	.main-nav ul{
-		grid-template-columns: 1fr;	}
-	.info{
-		grid-template-columns: 1fr;	}
-	
-	.info .btn{
-		display: block;
-		text-align: center;
-		margin: auto;}
-}
 
 @media (max-width:500px){
 	.top-container{
 		grid-template-areas:
-			'destaque'
-			'top-box-a'
-			'top-box-b';}
+			'banner'
+			'commom'
+			'vip';
+	}
+}
+
+@media(max-width:700px){
+	.top-container{
+		grid-template-areas: 
+			'banner banner'
+			'commom vip';
+	}
+
+	.banner h1{
+		font-size: 2.5rem;
+	}
+
+	.main-nav .navigation{
+		grid-template-columns: 1fr;	
+	}
+
+	.info{
+		grid-template-columns: 1fr;	
+	}
+	
+	.info .btn{
+		display: block;
+		text-align: center;
+		margin: auto;
+	}
 }
 
 /*===============================================================================================
